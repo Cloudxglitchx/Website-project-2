@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — HTML • Portfolio</title>
+  <meta name="description" content="HTML-focused page of Your Name's portfolio." />
+  <style>
+    :root{
+      --accent:#2563eb; --bg:#f7f7f9; --card:#fff; --muted:#6b7280;
+      --maxw:1000px; --r:12px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f172a}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
+    nav a{margin-left:12px;color:var(--muted);text-decoration:none}
+    .hero{display:flex;gap:20px;align-items:center;margin-top:20px}
+    .hero .profile{width:110px;height:110px;border-radius:12px;background:linear-gradient(180deg,#e6eefc,#fff);display:flex;align-items:center;justify-content:center}
+    h1{margin:0 0 8px 0;font-size:28px}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .card{background:var(--card);padding:14px;border-radius:var(--r);box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    footer{margin-top:32px;color:var(--muted);font-size:14px;text-align:center}
+    @media(max-width:900px){.projects{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.hero{flex-direction:column;align-items:flex-start}.projects{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div style="font-weight:700">Your Name</div>
+      <nav>
+        <a href="index.html">HTML</a>
+        <a href="js.html">JavaScript</a>
+        <a href="css.html">CSS</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Intro">
+        <div>
+          <h1>Hi, I’m <span style="color:var(--accent)">Your Name</span></h1>
+          <p style="color:var(--muted)">I build fast, accessible websites. This page focuses on HTML structure & projects.</p>
+          <p><a href="#projects" style="background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none">View projects</a></p>
+        </div>
+        <div class="profile" role="img" aria-label="Portrait of Your Name">
+          <!-- replace with <img src="..." alt="..."> -->
+          <div style="text-align:center">
+            <div style="font-weight:700;color:var(--accent)">YN</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" style="margin-top:28px">Projects — HTML</h2>
+        <p style="color:var(--muted)">Examples emphasizing semantic markup, accessible components, and progressive enhancement.</p>
+
+        <div class="projects" role="list">
+          <article class="card" role="listitem">
+            <h3 style="margin:0 0 8px 0">Project: Static Site</h3>
+            <p style="margin:0 0 12px;color:var(--muted)">A static, semantic site built with clean HTML and progressive enhancement.</p>
+            <a href="#" aria-label="Open static site demo">View demo →</a>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 style="margin:0 0 8px 0">Project: Accessible Forms</h3>
+            <p style="margin:0 0 12px;color:var(--muted)">Form patterns, labels, and validation with graceful fallbacks.</p>
+            <a href="#" aria-label="Open forms demo">View demo →</a>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 style="margin:0 0 8px 0">Project: Markdown Blog</h3>
+            <p style="margin:0 0 12px;color:var(--muted)">A blog generator using semantic HTML for posts and excerpts.</p>
+            <a href="#" aria-label="Open blog demo">View demo →</a>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Your Name • <a href="css.html">See CSS</a> • <a href="js.html">See JavaScript</a>
+      </footer>
+    </main>
+  </div>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
